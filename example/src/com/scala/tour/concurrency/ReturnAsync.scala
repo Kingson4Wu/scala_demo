@@ -1,5 +1,7 @@
 package com.scala.tour.concurrency
 
+import java.util.concurrent.TimeUnit
+
 /**
  * Created by kxw on 2015/7/5.
  */
@@ -29,7 +31,7 @@ object ReturnAsync {
       }
     })
 
-    val version = fromURL.ask(versionUrl)(akka.util.Timeout(5 * 1000))
+    val version = fromURL.ask(versionUrl)(akka.util.Timeout(5 ,TimeUnit.SECONDS))
     version onComplete {
       case msg => println(msg); system.shutdown
     }

@@ -30,11 +30,13 @@ object RemoteActor {
 
     val server = system.actorOf(Props[EchoServer], name = "echoServer")
 
-    val echoClient = system
-      .actorFor("akka://RemoteSystem@127.0.0.1:2552/user/echoServer")
+    //val echoClient = system.actorFor("akka://RemoteSystem@127.0.0.1:2552/user/echoServer")
+    val echoClient = system.actorSelection( "/RemoteSystem@127.0.0.1:2552/user/echoServer")
+
     echoClient ! "Hi Remote"
 
-    system.shutdown
+    //system.shutdown()
+    system.terminate()
 
 
   }
