@@ -11,3 +11,9 @@
  $ echo $AKKA_HOME
  /Users/jboner/tools/akka-2.0`
  5. 
+ 
+ 
+ 
+### link
++ Scala从零开始：使用Intellij IDEA写hello world:<http://www.tuicool.com/articles/BzI3UfZ>
++ <http://www.scala-lang.org/api/current/#package>
